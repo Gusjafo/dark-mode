@@ -1,14 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from "@angular/core";
+import { ThemeService } from "./services/theme.service";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   template: `
-    <h1>Welcome to {{title}}!</h1>
-
-    <router-outlet />
+    <div [ngClass]="{ 'dark-theme': isDarkMode }">
+      <app-toolbar [title]="title" icon="account_circle"> </app-toolbar>
+      <router-outlet />
+    </div>
   `,
-  styles: []
+  styles: [],
 })
 export class AppComponent {
-  title = 'dark-mode';
+  title = "dark-mode";
+  isDarkMode = true;
+
+  constructor(private themeService: ThemeService) {}
+
+  ngOnInit() {
+    this.themeService.darkMode.subscribe({
+      next: (v) => (this.isDarkMode = v),
+      error: (e) => console.error(e),
+      complete: () => console.info("complete"),
+    });
+  }
 }
