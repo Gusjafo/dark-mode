@@ -10,13 +10,15 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SlideToggleComponent } from './shared/slide-toggle/slide-toggle.component';
 import { IconComponent } from './shared/icon/icon.component';
+import { CardComponent } from './shared/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     SlideToggleComponent,
-    IconComponent
+    IconComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
