@@ -7,14 +7,12 @@ import { ThemeService } from "./services/theme.service";
     <div [ngClass]="{ 'dark-theme': isDarkMode }">
       <app-toolbar [title]="title" icon="account_circle"> </app-toolbar>
       <div class="main">
-        <div class="content">
-          <app-card></app-card>
-        </div>
+        <app-card></app-card>
       </div>
       <router-outlet />
     </div>
   `,
-  styleUrl: 'app.component.scss',
+  styleUrl: "app.component.scss",
 })
 export class AppComponent {
   title = "dark-mode";

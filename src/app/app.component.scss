@@ -1,26 +1,10 @@
-main {
+.main {
   width: 100%;
-  min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  box-sizing: inherit;
+  box-sizing: border-box;
   position: relative;
-}
-
-.content {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 700px;
-  margin-bottom: 3rem;
-}
-
-.content h1 {
-  margin-top: 1.75rem;
-}
-
-.content p {
-  margin-top: 1.5rem;
+  background-color: var(--mat-app-background-color);
 }
